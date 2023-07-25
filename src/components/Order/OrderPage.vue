@@ -1678,13 +1678,15 @@ export default {
         this.rePrintStatus = 0;
         this.checkExpressInfo();
         console.log(1);
+
+        if (item.order_status == 301 && item.is_fake == 1) {
+          this.dialogVisible2 = true;
+          console.log(3);
+        }
       } else if (item.order_status == 101) {
         this.getOrderInfo(this.order_id);
         this.dialogPriceVisible = true;
         console.log(2);
-      } else if (item.order_status == 301 && item.is_fake == 1) {
-        this.dialogVisible2 = true;
-        console.log(3);
       }
     },
     rePrintExpress() {
